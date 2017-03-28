@@ -1,6 +1,7 @@
 package com.lowray.store;
 
 import com.lowray.product.Product;
+import com.lowray.user.User;
 
 import java.io.Serializable;
 
@@ -9,5 +10,9 @@ import java.io.Serializable;
  */
 public interface Store extends Serializable {
 
-    public void addToStore(Product product);
+    void addToStore(Product product);
+
+    User getMerchant();
+
+
 }
