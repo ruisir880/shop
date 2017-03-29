@@ -1,6 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.2.xsd">
+
+       <aop:config>
+              <aop:aspect id="logAspect" ref="logClass">
+                     <aop:after-returning method="addProduct" pointcut-ref="addProduct"/>
+                     <aop:pointcut id="addProduct" expression="execution(* com.lowray.cart.Cart.add(com.lowray.product.Product))"/>
+              </aop:aspect>
+       </aop:config>
+
+       <beans>
+              <bean id="logClass" class="com.lowray.aspect.LogClass"/>
+              <bean id="cart" class="com.lowray.cart.Cart"/>
+              <bean id="merchant" class="com.lowray.user.Merchant">
+                     <property name="name" value="Ray"/>
+              </bean>
+              <bean id="store" class="com.lowray.store.WareStore">
+                     <property name="merchant" ref="merchant"/>
+              </bean>
+              <bean id="product" class="com.lowray.product.Ware">
+                     <property name="productType" value="Ware"/>
+                     <property name="price" value="100"/>
+                     <property name="store" ref="store"/>
+              </bean>
+       </beans>
 
 </beans>

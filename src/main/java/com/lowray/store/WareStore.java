@@ -15,12 +15,10 @@ import java.util.List;
 /**
  * Created by Ray Rui on 3/28/2017.
  */
-@Component
 public class WareStore implements Store {
 
     private Cache<ProductType,List<Product>> productCache = CacheBuilder.newBuilder().softValues().build();
 
-    @Autowired
     private User merchant;
 
     public void addToStore(Product product) {
@@ -37,5 +35,9 @@ public class WareStore implements Store {
 
     public User getMerchant() {
         return merchant;
+    }
+
+    public void setMerchant(User merchant) {
+        this.merchant = merchant;
     }
 }

@@ -11,15 +11,11 @@ import java.util.List;
 /**
  * Created by Ray Rui on 3/28/2017.
  */
-@Component
 public class Ware implements Product {
     private ProductType productType;
 
     private double price;
 
-    private List<WareProperty> wareProperties;
-
-    @Autowired
     private Store store;
 
     public ProductType getProductType() {
@@ -38,13 +34,6 @@ public class Ware implements Product {
         this.price = price;
     }
 
-    public List<WareProperty> getWareProperties() {
-        return wareProperties;
-    }
-
-    public void setWareProperties(List<WareProperty> wareProperties) {
-        this.wareProperties = wareProperties;
-    }
 
     public Store getStore() {
         return store;
