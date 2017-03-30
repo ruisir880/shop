@@ -8,10 +8,6 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import javax.smartcardio.Card;
-
-import static org.junit.Assert.*;
-
 /**
  * Created by Ray Rui on 3/29/2017.
  */

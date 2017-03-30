@@ -4,10 +4,7 @@ import com.google.common.cache.Cache;
 import com.google.common.cache.CacheBuilder;
 import com.lowray.product.Product;
 import com.lowray.property.ProductType;
-import com.lowray.user.Merchant;
 import com.lowray.user.User;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
 
 import java.util.LinkedList;
 import java.util.List;

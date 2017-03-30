@@ -1,12 +1,7 @@
 package com.lowray.product;
 
 import com.lowray.property.ProductType;
-import com.lowray.property.WareProperty;
 import com.lowray.store.Store;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
-
-import java.util.List;
 
 /**
  * Created by Ray Rui on 3/28/2017.
